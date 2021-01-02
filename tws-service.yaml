@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (HEAD)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: tws
+  name: tws
+spec:
+  ports:
+    - name: "4003"
+      port: 4003
+      targetPort: 4003
+    - name: "5901"
+      port: 5901
+      targetPort: 5900
+  selector:
+    io.kompose.service: tws
+status:
+  loadBalancer: {}
